@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://axuhongbo.github.io/"/>
-  <updated>2020-02-28T04:13:46.162Z</updated>
+  <updated>2020-02-28T09:28:03.682Z</updated>
   <id>http://axuhongbo.github.io/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新文章</title>
+    <link href="http://axuhongbo.github.io/2020/02/28/%E6%96%B0%E6%96%87%E7%AB%A0/"/>
+    <id>http://axuhongbo.github.io/2020/02/28/%E6%96%B0%E6%96%87%E7%AB%A0/</id>
+    <published>2020-02-28T09:28:03.000Z</published>
+    <updated>2020-02-28T09:28:03.682Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>c++</title>
