@@ -88,14 +88,14 @@
 
 
 
-<meta name="description" content="Geniuses">
+<meta name="description" content="蓝桥杯-基础练习-十六进制转八进制 资源限制时间限制：1.0s   内存限制：512.0MB问题描述　　给定n个十六进制正整数，输出它们对应的八进制数。 输入格式　　输入的第一行为一个正整数n （1&lt;&#x3D;n&lt;&#x3D;10）。　　接下来n行，每行一个由09、大写字母AF组成的字符串，表示要转换的十六进制正整数，每个十六进制数长度不超过100000。 输出格式　　输出n行，每行为输入对应的八进制正">
 <meta property="og:type" content="article">
 <meta property="og:title" content="新文章">
 <meta property="og:url" content="http://axuhongbo.github.io/2020/02/28/%E6%96%B0%E6%96%87%E7%AB%A0/index.html">
 <meta property="og:site_name" content="zxy&#39;blog">
-<meta property="og:description" content="Geniuses">
+<meta property="og:description" content="蓝桥杯-基础练习-十六进制转八进制 资源限制时间限制：1.0s   内存限制：512.0MB问题描述　　给定n个十六进制正整数，输出它们对应的八进制数。 输入格式　　输入的第一行为一个正整数n （1&lt;&#x3D;n&lt;&#x3D;10）。　　接下来n行，每行一个由09、大写字母AF组成的字符串，表示要转换的十六进制正整数，每个十六进制数长度不超过100000。 输出格式　　输出n行，每行为输入对应的八进制正">
 <meta property="article:published_time" content="2020-02-28T09:28:03.000Z">
-<meta property="article:modified_time" content="2020-02-28T09:28:03.682Z">
+<meta property="article:modified_time" content="2020-02-29T12:48:20.465Z">
 <meta property="article:author" content="ZXY">
 <meta name="twitter:card" content="summary">
 
@@ -409,7 +409,15 @@
       
 
       
-        
+        <p>蓝桥杯-基础练习-十六进制转八进制</p>
+<p>资源限制<br>时间限制：1.0s   内存限制：512.0MB<br>问题描述<br>　　给定n个十六进制正整数，输出它们对应的八进制数。</p>
+<p>输入格式<br>　　输入的第一行为一个正整数n （1&lt;=n&lt;=10）。<br>　　接下来n行，每行一个由0<del>9、大写字母A</del>F组成的字符串，表示要转换的十六进制正整数，每个十六进制数长度不超过100000。</p>
+<p>输出格式<br>　　输出n行，每行为输入对应的八进制正整数。</p>
+<p>　　【注意】<br>　　输入的十六进制数不会有前导0，比如012A。<br>　　输出的八进制数也不能有前导0。</p>
+<p>样例输入<br>　　2<br>　　39<br>　　123ABC</p>
+<p>样例输出<br>　　71<br>　　4435274</p>
+<p>　　【提示】<br>　　先将十六进制数转换成某进制数，再由某进制数转换成八进制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n;</span><br><span class="line">    string b, mre;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    string ave[110] &#x3D; &#123;&quot;0000&quot;, &quot;0001&quot;, &quot;0010&quot;, &quot;0011&quot;, &quot;0100&quot;, &quot;0101&quot;, &quot;0110&quot;, &quot;0111&quot;, &quot;1000&quot;,</span><br><span class="line">                       &quot;1001&quot;, &quot;1010&quot;, &quot;1011&quot;, &quot;1100&quot;, &quot;1101&quot;, &quot;1110&quot;, &quot;1111&quot;&#125;;</span><br><span class="line">    map &lt;string, string&gt; m;</span><br><span class="line">    m[&quot;000&quot;] &#x3D; &quot;0&quot;; m[&quot;001&quot;] &#x3D; &quot;1&quot;; m[&quot;010&quot;] &#x3D; &quot;2&quot;; m[&quot;011&quot;] &#x3D; &quot;3&quot;; m[&quot;100&quot;] &#x3D; &quot;4&quot;;</span><br><span class="line">    m[&quot;101&quot;] &#x3D; &quot;5&quot;; m[&quot;110&quot;] &#x3D; &quot;6&quot;; m[&quot;111&quot;] &#x3D; &quot;7&quot;;</span><br><span class="line">    for(int i &#x3D; 0; i &lt; n; i++)&#123;</span><br><span class="line">        cin&gt;&gt;b;</span><br><span class="line">        int lens &#x3D; b.length();</span><br><span class="line">        for(int j &#x3D; 0; j &lt; lens; j++)&#123;</span><br><span class="line">            if(b[j] &gt; &#39;9&#39;)&#123;</span><br><span class="line">                mre +&#x3D; ave[b[j]-&#39;A&#39;+10];</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                mre +&#x3D; ave[b[j]-&#39;0&#39;];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        int a &#x3D; mre.length();</span><br><span class="line">        if(a%3 &#x3D;&#x3D; 1)&#123;</span><br><span class="line">            mre &#x3D; &quot;00&quot;+mre;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(a%3 &#x3D;&#x3D; 2)&#123;</span><br><span class="line">            mre &#x3D; &quot;0&quot;+mre;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int j &#x3D; 0; j &lt; mre.length(); j+&#x3D;3)&#123;</span><br><span class="line">            string str &#x3D; mre.substr(j, 3);</span><br><span class="line">            string t &#x3D; m[str];</span><br><span class="line">            if(j &#x3D;&#x3D; 0 &amp;&amp; t &#x3D;&#x3D; &quot;0&quot;)&#123;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            cout&lt;&lt;t;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">        mre &#x3D; &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
